@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 export const Header = styled.header`
   display: flex;
@@ -47,27 +47,27 @@ export const MobileMenu = styled.div`
   position: absolute;
   top: 30px;
   right: 10px;
-
-  @media screen and (min-width: 1199px) {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: absolute;
-    top: 30px;
-    right: 10px;
-  }
 `;
 
 export const SocialsContainer = styled.ul`
-  display: flex;
-  gap: 20px;
+  display: grid;
+  gap: 5px;
+  @media screen and (min-width: 1199px) {
+    display: flex;
+    gap: 20px;
+  }
 `;
 
-export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+export const NavList = styled.ul`
+  display: grid;
+  gap: 5px;
+
+  @media screen and (min-width: 1199px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
 `;
 
 export const MobileWrap = styled.div`

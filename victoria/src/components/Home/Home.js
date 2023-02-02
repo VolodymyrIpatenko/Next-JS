@@ -61,7 +61,6 @@ const Home = ({ coachData }) => {
         </section>
         {/* <Slider /> */}
       </Main>
-      {/* <PageFooter /> */}
     </>
   );
 };
