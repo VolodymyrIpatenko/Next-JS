@@ -2,8 +2,7 @@ import styles from '@/styles/Home.module.css';
 import { Img, Main, Description, Coaches, Title } from './Home.styled';
 import { Breakpoint } from 'react-socks';
 import Typed from 'react-typed';
-// import Slider from '../slider/Slider.js';
-
+import SliderComponent from '../slider/Slider.js';
 const titleStyle = {
   marginTop: '50p',
   fontWeight: 'bold',
@@ -43,8 +42,19 @@ const Home = ({ coachData }) => {
           typeSpeed={100}
           showCursor={false}
         />
-        <Description>Сюди можна якись текст що буде описувати зал</Description>
-        {/* <Img src={require('./sport.jpg')} alt="wedding" loading="lazy" /> */}
+        <SliderComponent />
+        <Description>
+          Спортивний клуб «Вікторія» — це чудове місце для активного відпочинку,
+          а також нових знайомств і прекрасного спілкування. У нашому клубі ви
+          гарантовано отримаєте гарний настрій і заряд бадьорості, який
+          необхідний для досягнення успіху в житті! У нашому клубі продумано
+          зонування і розташування тренажерів відповідно до концепції
+          тренувального процесу. Це дозволяє виключити можливість одночасної
+          концентрації великої кількості людей в одній зоні клубу, щоб
+          тренувальний процес приносив задоволення і був комфортним й приємним
+          абсолютно для кожного. Основний принцип нашої роботи — надання послуг
+          кращої якості при збереженні помірних цін.
+        </Description>
         <section>
           <Title>Наші тренери</Title>
           <Coaches>
@@ -52,14 +62,7 @@ const Home = ({ coachData }) => {
               return <Coach key={coach.id} coachData={coach} />;
             })}
           </Coaches>
-          <section
-            style={{
-              display: 'grid',
-              placeContent: 'center',
-            }}
-          ></section>
         </section>
-        {/* <Slider /> */}
       </Main>
     </>
   );
