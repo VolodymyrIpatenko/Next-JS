@@ -2,6 +2,8 @@ import { React, useState } from 'react';
 import Modal from '../modal/Modal.js';
 import emailjs from 'emailjs-com';
 import validator from 'validator';
+import { useInput, useToggle } from '../customHooks/CustomHooks';
+
 import {
   MyForm,
   ButtonSubmit,
@@ -11,29 +13,12 @@ import {
   FormWrapper,
 } from './Contacts.styled';
 
-// const style = {
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   margin: '100px',
-// };
-
-function useInput(defaultValue = '') {
-  const [value, setValue] = useState(defaultValue);
-
-  const handleChange = e => {
-    setValue(e.target.value);
-  };
-
-  return [value, handleChange, setValue];
-}
-
 const Contacts = () => {
   const [name, setName] = useInput('');
   const [email, setEmailError] = useState('');
   const [message, setMessage] = useInput('');
   const [phone, setPhoneNumber] = useState('');
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useToggle(false);
 
   const values =
     name === '' ||
@@ -62,9 +47,9 @@ const Contacts = () => {
     }
   };
 
-  const handleModal = () => {
-    setModalOpen(prevState => !prevState);
-  };
+  // const handleModal = () => {
+  //   setModalOpen(prevState => !prevState);
+  // };
 
   function sendEmail(e) {
     e.preventDefault();
@@ -80,7 +65,7 @@ const Contacts = () => {
         result => {
           setTimeout(() => {
             window.location.reload();
-          }, 5000);
+          }, 3500);
         },
         error => {
           console.log(error.text);
@@ -141,7 +126,7 @@ const Contacts = () => {
           <ButtonSubmit
             disabled={values ? true : false}
             type="submit"
-            onClick={() => handleModal()}
+            onClick={() => setModalOpen.onToggle()}
           >
             {values ? 'Заповніть поля' : 'Відправити'}
           </ButtonSubmit>

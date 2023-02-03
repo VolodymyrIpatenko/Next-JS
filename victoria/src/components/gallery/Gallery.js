@@ -12,7 +12,7 @@ import seventh from './galleryGym/7.jpeg';
 import eightth from './galleryGym/8.jpeg';
 import nineth from './galleryGym/9.jpeg';
 import { FaExpandArrowsAlt } from 'react-icons/fa';
-import { useState } from 'react';
+import { useToggle } from '../customHooks/CustomHooks';
 import { Breakpoint } from 'react-socks';
 import { Fragment } from 'react';
 
@@ -36,11 +36,7 @@ const photoArr = [
 ];
 
 const Gallery = () => {
-  const [row, setRow] = useState(true);
-
-  const toggleDirection = () => {
-    setRow(state => !state);
-  };
+  const [column, setColumn] = useToggle(true);
 
   return (
     <>
@@ -64,7 +60,7 @@ const Gallery = () => {
         >
           <Fragment>
             <button
-              onClick={() => toggleDirection()}
+              onClick={() => setColumn.onToggle()}
               style={{
                 fontSize: '30px',
                 background: 'transparent',
@@ -76,17 +72,7 @@ const Gallery = () => {
             </button>
           </Fragment>
         </Breakpoint>
-        {row ? (
-          <GalleryListRow>
-            {photoArr.map(photo => {
-              return (
-                <li>
-                  <Image src={photo} alt="gym" width="400" height="600" />
-                </li>
-              );
-            })}
-          </GalleryListRow>
-        ) : (
+        {column ? (
           <GalleryListColumn>
             {photoArr.map(photo => {
               return (
@@ -96,6 +82,16 @@ const Gallery = () => {
               );
             })}
           </GalleryListColumn>
+        ) : (
+          <GalleryListRow>
+            {photoArr.map(photo => {
+              return (
+                <li>
+                  <Image src={photo} alt="gym" width="400" height="600" />
+                </li>
+              );
+            })}
+          </GalleryListRow>
         )}
       </Main>
     </>

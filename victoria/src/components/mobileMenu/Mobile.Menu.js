@@ -1,5 +1,6 @@
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
+import { useToggle } from '../customHooks/CustomHooks';
 import { navigation, socialsList } from '../common/common';
 import styles from '@/styles/Header.module.scss';
 import {
@@ -13,11 +14,7 @@ import Image from 'next/image';
 import { Breakpoint } from 'react-socks';
 
 export default function MobileMenuComponent() {
-  const [isOpenMobileMenu, setMobileMenuOpen] = useState(false);
-
-  const onHandleShowMenu = () => {
-    setMobileMenuOpen(prevState => !prevState);
-  };
+  const [isOpenMobileMenu, setMobileMenuOpen] = useToggle(false);
 
   return (
     <MobileMenu>
@@ -25,7 +22,9 @@ export default function MobileMenuComponent() {
         <Link href="/" title="На головну">
           <Image src="/logo.jpg" width="70" height="30" alt="Логотип" />
         </Link>
-        <GiHamburgerMenu onClick={() => onHandleShowMenu()}></GiHamburgerMenu>
+        <GiHamburgerMenu
+          onClick={() => setMobileMenuOpen.onToggle()}
+        ></GiHamburgerMenu>
       </Breakpoint>
       {isOpenMobileMenu ? (
         <MobileMenu>

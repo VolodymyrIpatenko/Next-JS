@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Menu from './sportbarData';
-// import Footer from '../footer/Footer';
 import {
   CategoryButton,
   ProductsVariety,
@@ -56,7 +55,6 @@ const Sportbar = () => {
 
               return (
                 <ProductsGalleryItem key={id}>
-                  {/* <img width="300" src={image} /> */}
                   <div
                     style={{
                       padding: '15px',
@@ -73,7 +71,6 @@ const Sportbar = () => {
           </ProductsGallery>
         </section>
       </main>
-      {/* <Footer /> */}
     </>
   );
 };
