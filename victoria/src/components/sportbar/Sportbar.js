@@ -6,6 +6,8 @@ import {
   ProductsGallery,
   ProductsGalleryItem,
 } from './SportBar.styled';
+import { nanoid } from 'nanoid';
+const id = nanoid();
 
 const Sportbar = () => {
   const [items, setItems] = useState(Menu);
@@ -32,7 +34,7 @@ const Sportbar = () => {
       <ProductsVariety>
         {buttons.map(button => {
           return (
-            <li>
+            <li key={id}>
               <CategoryButton onClick={() => filterItem(button)}>
                 {button}
               </CategoryButton>

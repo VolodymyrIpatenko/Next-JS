@@ -1,7 +1,7 @@
 {
-  "name": "victoria",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sport-club-victoria.com.ua",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,6 +13,7 @@
     "emailjs-com": "^3.2.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "nanoid": "^4.0.1",
     "next": "13.1.6",
     "react": "^18.2.0",
     "react-dom": "18.2.0",

@@ -6,7 +6,7 @@ export default function Modal() {
   return (
     <Backdrop>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
-        <p>Дякуємо!В найближчий час ми з вами зв'яжемося.</p>
+        <p>Найближчим часом ми з вами зв&apos;яжемося.</p>
       </div>
     </Backdrop>
   );

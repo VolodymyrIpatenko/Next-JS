@@ -47,10 +47,6 @@ const Contacts = () => {
     }
   };
 
-  // const handleModal = () => {
-  //   setModalOpen(prevState => !prevState);
-  // };
-
   function sendEmail(e) {
     e.preventDefault();
 
@@ -79,7 +75,7 @@ const Contacts = () => {
         <MyForm onSubmit={sendEmail}>
           <h1>Напишіть нам</h1>
           <LabelText>
-            <p>Ім'я</p>
+            <p>Ім&apos;я</p>
             <Input
               type="text"
               placeholder="Ваше ім'я"
@@ -105,7 +101,7 @@ const Contacts = () => {
             </p>
           </LabelText>
           <LabelText>
-            <p>Телефон</p>
+            <span>Телефон</span>
             <Input
               type="tel"
               placeholder="Ваш номер телефону"

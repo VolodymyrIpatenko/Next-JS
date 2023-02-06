@@ -77,7 +77,7 @@ export const Input = styled.input`
   }
 `;
 
-export const LabelText = styled.p`
+export const LabelText = styled.label`
   margin: 5px;
   font-size: 20px;
   color: white;

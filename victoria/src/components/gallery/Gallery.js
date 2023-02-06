@@ -15,6 +15,9 @@ import { FaExpandArrowsAlt } from 'react-icons/fa';
 import { useToggle } from '../customHooks/CustomHooks';
 import { Breakpoint } from 'react-socks';
 import { Fragment } from 'react';
+import { nanoid } from 'nanoid';
+
+const id = nanoid();
 
 const titleStyle = {
   marginTop: '50p',
@@ -76,7 +79,7 @@ const Gallery = () => {
           <GalleryListColumn>
             {photoArr.map(photo => {
               return (
-                <li>
+                <li key={id}>
                   <Image src={photo} alt="gym" width="400" height="600" />
                 </li>
               );
@@ -86,7 +89,7 @@ const Gallery = () => {
           <GalleryListRow>
             {photoArr.map(photo => {
               return (
-                <li>
+                <li key={id}>
                   <Image src={photo} alt="gym" width="400" height="600" />
                 </li>
               );
